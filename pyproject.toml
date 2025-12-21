@@ -4,10 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "portpilot"
-version = "0.1.0"
+version = "0.1.1"
 description = "Interactive terminal port manager for developers"
 readme = "README.md"
 license = {text = "MIT"}
+authors = [{ name = "Emre Çalışkan" }]
 requires-python = ">=3.8"
 keywords = ["port", "process", "terminal", "tui", "developer", "tools", "kill", "network"]
 classifiers = [
@@ -47,9 +48,10 @@ pp = "portpilot.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/cyber-emreclskn/portpilot"
-Documentation = "https://github.com/cyber-emreclskn/portpilot"
+Documentation = "https://github.com/cyber-emreclskn/portpilot#readme"
 Repository = "https://github.com/cyber-emreclskn/portpilot"
 Issues = "https://github.com/cyber-emreclskn/portpilot/issues"
+Changelog = "https://github.com/cyber-emreclskn/portpilot/releases"
 
 [tool.setuptools.packages.find]
 where = ["."]

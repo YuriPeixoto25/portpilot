@@ -108,26 +108,26 @@ PortPilot highlights common development ports:
 ### Quick port cleanup before starting dev server
 
 ```bash
-pm kill 3000 -y && npm run dev
+pp kill 3000 -y && npm run dev
 ```
 
 ### Find what's using a port
 
 ```bash
-pm info 8000
+pp info 8000
 ```
 
 ### Kill all common dev ports
 
 ```bash
-pm killall 3000 3001 8000 8080 5000 -y
+pp killall 3000 3001 8000 8080 5000 -y
 ```
 
 ### Script integration
 
 ```bash
 # Check if port is in use
-if pm list -p 3000 --json | jq -e '.[0]' > /dev/null; then
+if pp list -p 3000 --json | jq -e '.[0]' > /dev/null; then
     echo "Port 3000 is in use"
 fi
 ```
@@ -161,6 +161,27 @@ MIT License - see [LICENSE](LICENSE) for details.
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+### How to contribute
+
+1) Fork the repository and create a feature branch:
+- `git checkout -b feature/my-change`
+
+2) Set up a virtual environment and install dev dependencies:
+- `python -m venv venv`
+- Activate it (Windows: `venv\Scripts\activate`, macOS/Linux: `source venv/bin/activate`)
+- `pip install -e ".[dev]"`
+
+3) Run checks before opening a PR:
+- `pytest`
+- `ruff check portpilot/`
+- `black portpilot/`
+
+4) Open a Pull Request against `main` and describe:
+- What changed and why
+- How to test it locally
+
+Maintainer: **Emre Çalışkan**
 
 ---
 
