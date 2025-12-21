@@ -4,8 +4,6 @@
 
 Tired of running `lsof -i :3000` and then `kill -9 <pid>` every time? PortPilot gives you a beautiful TUI to see all listening ports and kill them with a keystroke.
 
-![PortPilot Demo](https://raw.githubusercontent.com/emre/portpilot/main/demo.gif)
-
 ## ✨ Features
 
 - 🖥️ **Interactive TUI** - Navigate with keyboard, search, and kill processes instantly
@@ -24,7 +22,7 @@ pip install portpilot
 Or install from source:
 
 ```bash
-git clone https://github.com/emre/portpilot.git
+git clone https://github.com/cyber-emreclskn/portpilot.git
 cd portpilot
 pip install -e .
 ```
@@ -136,7 +134,7 @@ fi
 
 ```bash
 # Clone the repo
-git clone https://github.com/emre/portpilot.git
+git clone https://github.com/cyber-emreclskn/portpilot.git
 cd portpilot
 
 # Create virtual environment
